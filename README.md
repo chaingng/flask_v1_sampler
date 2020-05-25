@@ -1,1 +1,57 @@
 # flask_v1_sampler
+
+
+1. はじめに
+2. Python 2.6および3.3のサポート廃止
+3. 必須ライブラリの最小依存バージョンが最新の安定バージョンに変更
+4. create_appまたはmake_appの名前のアプリケーションファクトリを自動検出
+5. 開発サーバーはデフォルトでスレッドを使用
+6. flaskコマンドでアプリケーションを起動する場合はapp.runをスキップ
+7. python-dotenvライブラリを利用することで.envと.flaskenvファイルを自動読込み
+8. FLASK_APPにてアプリケーションファクトリと引数が設定できるように
+9. flask runにてhttpsアクセスを可能にするための--certと--keyオプションが追加
+10. ルーティング一覧を確認するためのflask routesコマンドが追加
+11. FLASK_APPにて.pyを指定しなくても動作可能に
+12. Flask CLIコマンドをテストするためにtest_cli_runner()が追加
+13. configをsilentモードでロードしたにも関わらずディレクトリ以下にファイルがあった場合にエラーとなっていた問題を修正
+14. send_file()にてUnicodeのファイル名をサポート
+15. HTTP範囲リクエストで無効な範囲のファイルを取得した際にエラーとなっていた問題を修正
+16. make_response()にて不正なレスポンスタイプの場合にTypeErrorを返すよう変更
+17. セッションCookieのSameSite値を扱うためのSESSION_COOKIE_SAMESITEが追加
+18. ブラウザーが無視する可能性のある大きなCookieサイズであった場合にWerkzeugにて警告を表示
+19. Flask.__init__にstatic_host引数が追加
+20. Flask.__init__にhost_matching引数が追加
+21. JSONIFY_PRETTYPRINT_REGULARをデフォルトで無効に設定
+22. セッションにアクセスされた際にレスポンスにVaryヘッダを付与
+23. APPLICATION_ROOTにデフォルトで/を設定
+24. url_for()で指定された_scheme引数をエラー時も引き継げるように変更
+25. TRAP_BAD_REQUEST_ERRORSをデバッグモードでデフォルトで有効に設定
+26. Blueprintのurl_prefixが/で終わっていた場合に自動で削除
+27. Blueprintのビュー関数名に.を含んでいた場合はエラー処理を行うように変更
+28. MethodViewサブクラスが基本クラスからメソッドハンドラを継承
+29. Viewクラスにprovide_automatic_optionsが追加
+30. add_url_rule()にprovide_automatic_optionsが追加
+31. Request.get_json()がキャッシュされることで発生していた問題を修正
+32. Request.get_json()にてencodeが指定されていない場合にUTFエンコーディング方式を自動検出
+33. flask.json.JSONEncoder()がUTCではない時刻を返していた問題を修正
+34. Blueprintでjson_encoderとjson_decoderをオーバーライド可能に
+35. JSONTagを生成しTaggedJSONSerializer.registerで新しいタグが追加可能に
+36. サブドメインのチェックを行うためのsubdomain_matching引数が追加
+37. SERVER_NAMEが設定されている場合にSESSION_COOKIE_DOMAINにキャッシュ
+38. IPアドレスを正しいセッションCookieドメインとして許可
+39. セッションCookieドメインがむき出しのホスト名またはIPアドレスである場合に警告を表示
+40. RequestクラスとResponseクラスにJSonMixinが追加
+41. test_client()にてjsonデータの扱いが可能に
+42. テストクライアントにフルパスのURLが渡された場合にURL内のスキームを使用
+43. test_client.openにてEnvironBuilderもしくはdictの受け渡しが可能に
+44. app.test_request_contextにsubdomainとurl_scheme引数が追加
+45. リクエストがコンテキストスタックにまだプッシュされていない場合にのみセッションを開くように変更
+46. アプリケーションのコンテキストが更新されないかつリクエストコンテキストスタックが増加する問題を修正
+47. HTTPExceptionサブクラスの例外発生時にHTTPExceptionのエラーハンドリングが行われなかった問題を修正
+48. MROの際にエラーハンドラーがキャッシュされて引き起こしていた問題を修正
+49. app.run()にてデバッグフラグが設定された際にapp.jinja_envのオートリロード設定がテンプレートのオートリロード設定と同期されるように
+50. アプリケーションファクトリ関数はscript_infoを必須としないように変更
+51. Flask.loggerが簡素化
+52. 一部の古い非推奨コードが削除
+53. 開発者がよりよいプラクティスを身に着けられるよう公式ドキュメントとサンプルコードを書き直し
+54. flask公式ドキュメントの見栄えを改善
